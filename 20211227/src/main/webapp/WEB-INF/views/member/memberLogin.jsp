@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,12 +9,7 @@
 <body>
 	<jsp:include page="../home/menu.jsp"/>
 	<div align="center">
-		<div>
-			<div><h3>회원목록</h3></div>
-			<c:forEach items="${members }" var="member">
-				${member.id } : ${member.name } <br>
-			</c:forEach>
-		</div>
+		<div><h1>${message }</h1></div>
 	</div>
 </body>
 </html>

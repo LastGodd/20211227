@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<jsp:include page="../home/menu.jsp"/>
 	<div align="center">
 		<div>
 			<h3>로 그 인</h3>
@@ -22,7 +23,7 @@
 								placeholder="Enter E-mail..."></td>
 						</tr>
 						<tr>
-							<th width="150">아 이 디</th>
+							<th width="150">비밀번호</th>
 							<td width="250">
 							<input type="password" id="password" name="password" required="required"
 								placeholder="Enter password..."></td>
