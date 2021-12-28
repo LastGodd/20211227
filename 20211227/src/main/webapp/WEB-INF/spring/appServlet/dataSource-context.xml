@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- DB Connection Poll define -->
+	<!-- jdbc:oracle:thin:@testdb_medium?TNS_ADMIN=C:\Users\admin\Downloads\Wallet_testdb" -->
+	<!-- <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/> -->
+	<bean class="org.apache.commons.dbcp2.BasicDataSource" id="dataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+		<property name="url" value="jdbc:oracle:thin:@testdb_medium?TNS_ADMIN=C:\Users\admin\Downloads\Wallet_testdb"/>
+		<property name="username" value="rlatkdgns"/>
+		<property name="password" value="tkdgnsWkd1!1"/>
+	</bean>
+
+	<!-- Mybatis define -->
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
+		<property name="mapperLocations" value="classpath*:co/micol/prj/**/service/*-map.xml" />
+	</bean>
+	
+	<bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession">
+		<constructor-arg ref="sqlSessionFactoryBean"/>
+	</bean>
+	
+	<mybatis-spring:scan base-package="co.micol.prj"/>
+	
+</beans>
