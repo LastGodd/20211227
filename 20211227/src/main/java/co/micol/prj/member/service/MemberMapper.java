@@ -2,6 +2,8 @@ package co.micol.prj.member.service;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
+
 public interface MemberMapper {
 	List<MemberVO> memberSelectList();
 	MemberVO memberSelect(MemberVO member); // 한명정보조회, 로그인까지 사용

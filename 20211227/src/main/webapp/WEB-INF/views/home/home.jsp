@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>WellCome To My Home</h1>
-	The time on the server is ${serverTime}.
+	<h1>Well Come To My Home</h1>
+	<a href="memberSerlectList.do">멤버목록</a>
+	<a href="memberLoginForm.do">로그인</a>
 </body>
 </html>
